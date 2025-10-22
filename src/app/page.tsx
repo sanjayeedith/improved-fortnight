@@ -3,13 +3,39 @@
 import React from "react";
 import ButtonDownloadDemo from "@/components/ui/demo";
 import { Typewriter } from "@/components/ui/typewriter";
-import { ShaderBackground } from "@/components/ui/infinite-hero";
+import dynamic from "next/dynamic";
 import { Timeline } from "@/components/ui/timeline";
-import InteractiveImageBentoGalleryDemo from "@/components/ui/bento-gallery-demo";
+const ShaderBackground = dynamic(
+  () =>
+    import("@/components/ui/infinite-hero").then((mod: unknown) => {
+      const m = mod as { ShaderBackground?: unknown; default?: unknown } | unknown;
+      const comp = (m as { ShaderBackground?: unknown })?.ShaderBackground ?? (m as { default?: unknown })?.default ?? mod;
+      return comp as unknown as React.ComponentType<{ className?: string }>;
+    }),
+  { ssr: false }
+);
+
+// Small wrapper with explicit props so TS accepts <ShaderBackground className="..." />
+function ShaderBackgroundWrapper(props: { className?: string }) {
+  const Comp = ShaderBackground as unknown as React.ComponentType<{ className?: string }>;
+  return <Comp {...props} />;
+}
+
+const InteractiveImageBentoGalleryDemo = dynamic(
+  () =>
+    import("@/components/ui/bento-gallery-demo").then((mod: unknown) => {
+      const m = mod as { default?: unknown } | unknown;
+      const comp = (m as { default?: unknown })?.default ?? mod;
+      return comp as unknown as React.ComponentType<unknown>;
+    }),
+  { ssr: false, loading: () => <div className="h-48 bg-white/5 rounded-lg animate-pulse" /> }
+);
+import { useIsLowEndDevice } from "@/lib/useDevicePerformance";
 import Image from "next/image";
 import { Footer } from "@/components/ui/footer-section";
 
 export default function Home() {
+  const isLowEnd = useIsLowEndDevice();
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       import("@/lib/lenis").then(({ initLenis }) => {
@@ -33,10 +59,14 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <div className="relative min-h-screen bg-black flex items-center justify-center p-8 overflow-hidden">
-        {/* Animated shader background */}
-        <div className="absolute inset-0 z-0">
-          <ShaderBackground className="w-full h-full" />
-        </div>
+        {/* Animated shader background (disabled on low-end devices) */}
+        {!isLowEnd ? (
+          <div className="absolute inset-0 z-0">
+            <ShaderBackgroundWrapper className="w-full h-full" />
+          </div>
+        ) : (
+          <div className="absolute inset-0 z-0 bg-black/80" />
+        )}
 
         {/* Transparent Header */}
         <header className="fixed top-6 left-1/2 -translate-x-1/2 z-30 backdrop-blur-sm bg-black/20 border border-white/10 rounded-full px-8 py-3">
@@ -184,8 +214,12 @@ export default function Home() {
       <section id="work" className="relative bg-black pt-0">
         <h2 className="text-2xl font-mono text-orange-500 tracking-wider uppercase font-bold text-center">My Professional Journey</h2>
         <div className="flex justify-center mb-8">
-          <div className="w-full">
-            <InteractiveImageBentoGalleryDemo />
+            <div className="w-full">
+              {isLowEnd ? (
+                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-white/5 to-white/3 border border-white/6 p-6 flex items-center justify-center text-white/60">Visual preview</div>
+              ) : (
+                <InteractiveImageBentoGalleryDemo />
+              )}
           </div>
         </div>
         
