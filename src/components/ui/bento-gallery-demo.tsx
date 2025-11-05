@@ -18,7 +18,7 @@ const imageItems = [
   {
     id: 3,
     title: "Nike Product Manager",
-    desc: "Engaging with Nike's Product Manager APAC",
+    desc: "Engaging talks with Nike's Product Manager APAC",
     url: "/1756055113118.jpg",
     span: "md:row-span-1",
   },
