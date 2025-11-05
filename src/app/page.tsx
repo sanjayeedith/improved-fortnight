@@ -255,7 +255,7 @@ const experienceData = [
     content: (
       <div>
         <p className="text-white text-xs md:text-sm font-normal mb-4 font-mono">
-          <span className="font-bold font-mono">Gen AI Engineer</span> at Renault Nissan Technology Business Centre - R&D (NISSAN)
+          <span className="font-bold font-mono">AI Research Engineer</span> at Renault Nissan Technology Business Centre - R&D (NISSAN)
         </p>
         <div className="mb-8">
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
