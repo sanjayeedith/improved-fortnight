@@ -97,7 +97,7 @@ export default function Home() {
                 />
                 <div className="pt-6 flex justify-center">
                   {/* Resume Download Button */}
-                  <a href="/SANJAY%20Resume.pdf" download target="_blank" rel="noopener noreferrer">
+                  <a href="/SANJAY%20R%20Resume.pdf" download target="_blank" rel="noopener noreferrer">
                     <ButtonDownloadDemo />
                   </a>
                 </div>
@@ -144,7 +144,6 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-4">
-                <span className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-white/70">AWS</span>
                 <span className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-white/70">Docker</span>
                 <span className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-white/70">Python</span>
                 <span className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-white/70">Google Cloud</span>
@@ -153,9 +152,6 @@ export default function Home() {
 
               {/* Tech icons row - left aligned, matches badges */}
               <div className="flex flex-wrap gap-6 pt-3 items-center">
-                <a href="https://aws.amazon.com" target="_blank" rel="noreferrer" title="AWS" className="group">
-                  <Image src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width={36} height={36} className="opacity-80 group-hover:opacity-100 transition" />
-                </a>
                 <a href="https://www.docker.com/" target="_blank" rel="noreferrer" title="Docker" className="group">
                   <Image src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width={36} height={36} className="opacity-80 group-hover:opacity-100 transition" />
                 </a>
@@ -189,8 +185,8 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-sm p-0 flex items-center justify-center overflow-hidden relative">
                   <Image
-                  src="/profile.jpg"
-                  alt="Profile"
+                  src="/Profile_1.jpeg"
+                  alt="Profile_1"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -249,26 +245,26 @@ const experienceData = [
     title: (
       <div className="flex flex-col items-start gap-2">
           <span className="font-mono">Present</span>
-        <Image src="/nissan-seeklogo.png" alt="Nissan Motor Company" width={120} height={60} />
+        <Image src="/nissan-logo-white.svg" alt="Nissan Motor Company" width={120} height={60} />
       </div>
     ),
     content: (
       <div>
         <p className="text-white text-xs md:text-sm font-normal mb-4 font-mono">
-          <span className="font-bold font-mono">AI Research Engineer</span> at Renault Nissan Technology Business Centre - R&D (NISSAN)
+          <span className="font-bold font-mono">Gen AI Research Engineer</span> at Renault Nissan Technology Business Centre - R&D (NISSAN)
         </p>
         <div className="mb-8">
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✨ LLM Fine-tuning and optimization
+            ✨ Contributed to confidential R&D initiatives focused on Generative AI and applied machine learning systems.
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✨ Integrating Gen AI into production systems
+            ✨ Evaluated and collaborated with external startups on AI technologies aligned with internal research objectives.
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✨ Research and development of new AI technologies
+            ✨ Integrated GenAI components into internal systems, including LLM-based workflows and retrieval-augmented generation (RAG) pipelines.
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✨ Startup evaluation and prototyping
+            ✨ Supported project coordination and technical leadership within cross-functional R&D teams. 
           </div>
         </div>
       </div>
@@ -291,19 +287,19 @@ const experienceData = [
         </p>
         <div className="mb-8">
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Developed advanced algorithm for SAR satellite image object detection
+            ✨ Worked closely with AI scientists on applied research in computer vision for remote sensing and defence-oriented use cases.
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Achieved 15% improvement in accuracy, 20% reduction in false positives
+           ✨ Designed and implemented an advanced object detection algorithm for SAR satellite imagery, achieving ~15% improvement in detection accuracy and ~20% reduction in false positives through model and pipeline optimization.
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Data annotation and labeling for ML models
+            ✨ Performed large-scale data annotation and labelling to support supervised training and evaluation workflows. 
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Created plugins for QGIS integration
+            ✨ Developed custom plugins for QGIS to support visualization and analysis of geospatial AI outputs. 
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Integrated algorithms with HITACI Tool
+            ✨ Integrated developed algorithms with internal analysis and visualization tools (HITACHI platform) for end-to-end validation .
           </div>
         </div>
       </div>
@@ -326,13 +322,13 @@ const experienceData = [
         </p>
         <div className="mb-8">
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Worked with cross-functional teams on ML projects
+            ✨ Collaborated with cross-functional teams to design and deliver an end-to-end ML solution for acquisition likelihood prediction. 
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Developed ML model predicting company acquisition (91.5% accuracy)
+            ✨ Built and evaluated supervised ML models achieving ~91.5% accuracy through feature engineering and model optimization.
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Integrated ML models with production systems
+            ✨ Developed data pipelines for ETL, preprocessing, and feature extraction using Python and SQL.
           </div>
         </div>
       </div>
@@ -355,10 +351,11 @@ const experienceData = [
         </p>
         <div className="mb-8">
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Collaborating with experts in the field
+            ✨ Contributing to a collaborative research initiative focused on hurricane prediction 
+using machine learning and AI-based forecasting techniques. 
           </div>
           <div className="flex gap-2 items-center text-white/70 text-xs md:text-sm font-mono">
-            ✅ Contributing to AI for social good initiatives
+            ✨ Collaborating with researchers and practitioners to apply AI techniques for climate and social impact use cases. 
           </div>
         </div>
       </div>
